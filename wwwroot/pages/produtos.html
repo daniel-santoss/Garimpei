@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produtos — Garimpei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <button class="topbar__burger" id="burger" aria-label="Menu">☰</button>
+    <span class="topbar__brand">👗 Garimpei</span>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h1>Produtos</h1>
+          <p>Gerencie as peças do brechó</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn btn--secundario" id="btn-categorias">Gerenciar categorias</button>
+          <a class="btn btn--primario" href="/pages/produto-form.html">+ Novo produto</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="filtros">
+          <div class="campo" style="min-width:220px;">
+            <label for="f-busca">Buscar por nome</label>
+            <input type="text" id="f-busca" placeholder="Ex.: vestido" />
+          </div>
+          <div class="campo" style="min-width:170px;">
+            <label for="f-categoria">Categoria</label>
+            <select id="f-categoria"><option value="">Todas</option></select>
+          </div>
+          <div class="campo" style="min-width:150px;">
+            <label for="f-status">Status</label>
+            <select id="f-status">
+              <option value="">Todos</option>
+              <option value="1">Disponível</option>
+              <option value="2">Vendido</option>
+              <option value="3">Inativo</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="lista"><div class="spinner"></div></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/produtos.js"></script>
+</body>
+</html>

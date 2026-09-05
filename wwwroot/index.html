@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Garimpei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <button class="topbar__burger" id="burger" aria-label="Menu">☰</button>
+    <span class="topbar__brand">👗 Garimpei</span>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Visão geral do brechó</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn btn--secundario" href="/pages/produtos.html">+ Novo produto</a>
+          <a class="btn btn--primario" href="/pages/venda-form.html">+ Nova venda</a>
+        </div>
+      </div>
+
+      <div class="stats-grid" id="stats">
+        <div class="spinner"></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h2 class="card__titulo">Últimas vendas</h2>
+          <div id="ultimas-vendas"><div class="spinner"></div></div>
+        </div>
+        <div class="card">
+          <h2 class="card__titulo">Produtos cadastrados recentemente</h2>
+          <div id="produtos-recentes"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendas — Garimpei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <button class="topbar__burger" id="burger" aria-label="Menu">☰</button>
+    <span class="topbar__brand">👗 Garimpei</span>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h1>Vendas</h1>
+          <p>Histórico de vendas do brechó</p>
+        </div>
+        <a class="btn btn--primario" href="/pages/venda-form.html">+ Nova venda</a>
+      </div>
+
+      <div class="card">
+        <div id="lista"><div class="spinner"></div></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/vendas.js"></script>
+</body>
+</html>

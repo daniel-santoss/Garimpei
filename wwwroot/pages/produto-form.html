@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produto — Garimpei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <button class="topbar__burger" id="burger" aria-label="Menu">☰</button>
+    <span class="topbar__brand">👗 Garimpei</span>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h1 id="titulo">Novo produto</h1>
+          <p>Preencha os dados da peça</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <form class="form" id="form" novalidate>
+          <div class="campo">
+            <label for="nome">Nome *</label>
+            <input type="text" id="nome" maxlength="120" />
+            <span class="erro-inline" data-erro="nome"></span>
+          </div>
+
+          <div class="campo">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" maxlength="500"></textarea>
+          </div>
+
+          <div class="form-linha">
+            <div class="campo">
+              <label for="categoriaId">Categoria *</label>
+              <select id="categoriaId"><option value="">Selecione...</option></select>
+              <span class="erro-inline" data-erro="categoriaId"></span>
+            </div>
+            <div class="campo">
+              <label for="estado">Estado / Conservação *</label>
+              <select id="estado">
+                <option value="">Selecione...</option>
+                <option value="1">Novo</option>
+                <option value="2">Seminovo</option>
+                <option value="3">Usado</option>
+              </select>
+              <span class="erro-inline" data-erro="estado"></span>
+            </div>
+          </div>
+
+          <div class="form-linha">
+            <div class="campo">
+              <label for="tamanho">Tamanho</label>
+              <input type="text" id="tamanho" maxlength="20" placeholder="Ex.: M, 40, Único" />
+            </div>
+            <div class="campo">
+              <label for="cor">Cor</label>
+              <input type="text" id="cor" maxlength="30" />
+            </div>
+            <div class="campo">
+              <label for="preco">Preço (R$) *</label>
+              <input type="number" id="preco" step="0.01" min="0.01" />
+              <span class="erro-inline" data-erro="preco"></span>
+            </div>
+          </div>
+
+          <div class="form-acoes">
+            <button type="submit" class="btn btn--primario" id="btn-salvar">Salvar</button>
+            <a class="btn btn--secundario" href="/pages/produtos.html">Cancelar</a>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/produto-form.js"></script>
+</body>
+</html>

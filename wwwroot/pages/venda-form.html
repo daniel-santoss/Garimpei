@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova venda — Garimpei</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <button class="topbar__burger" id="burger" aria-label="Menu">☰</button>
+    <span class="topbar__brand">👗 Garimpei</span>
+  </div>
+  <div class="backdrop" id="backdrop"></div>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar"></aside>
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <h1>Nova venda</h1>
+          <p>Selecione o cliente e as peças</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h2 class="card__titulo">Dados da venda</h2>
+          <div class="campo">
+            <label for="cliente">Cliente (opcional)</label>
+            <select id="cliente"><option value="">Consumidor não identificado</option></select>
+          </div>
+          <div class="campo">
+            <label for="produto">Adicionar produto</label>
+            <div style="display:flex; gap:8px;">
+              <select id="produto" style="flex:1;"><option value="">Selecione um produto...</option></select>
+              <button class="btn btn--secundario" id="btn-add">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="card__titulo">Itens da venda</h2>
+          <div id="carrinho">
+            <div class="estado-vazio"><span class="emoji">🛒</span>Nenhum item adicionado.</div>
+          </div>
+          <div class="flex-between" style="margin-top:16px; border-top:1px solid var(--cor-borda); padding-top:14px;">
+            <strong>Total</strong>
+            <strong id="total" style="font-size:1.3rem; color:var(--cor-primaria);">R$ 0,00</strong>
+          </div>
+          <div class="form-acoes" style="margin-top:16px;">
+            <button class="btn btn--primario" id="btn-confirmar" disabled>Confirmar venda</button>
+            <a class="btn btn--secundario" href="/pages/vendas.html">Cancelar</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/venda-form.js"></script>
+</body>
+</html>

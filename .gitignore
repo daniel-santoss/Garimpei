@@ -1,0 +1,17 @@
+## .NET / build
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+## Rider / VS Code
+.idea/
+.vscode/
+
+## App
+appsettings.Production.json
+
+## Sistema
+Thumbs.db
+.DS_Store
