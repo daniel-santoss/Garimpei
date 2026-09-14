@@ -35,8 +35,8 @@ function render(vendas) {
               <td class="num">${Ui.moeda(v.total)}</td>
               <td>${Ui.badge(v.statusTexto)}</td>
               <td class="acoes">
-                <button class="btn-icon" title="Ver detalhes" data-ver="${v.id}">👁️</button>
-                <button class="btn-icon" title="Cancelar venda" data-cancelar="${v.id}" ${v.status === 2 ? 'disabled' : ''}>❌</button>
+                <button class="btn-icon btn-icon--detalhes" title="Ver detalhes" data-ver="${v.id}">${Ui.icones.detalhes}</button>
+                <button class="btn-icon btn-icon--cancelar" title="Cancelar venda" data-cancelar="${v.id}" ${v.status === 2 ? 'disabled' : ''}>${Ui.icones.cancelar}</button>
               </td>
             </tr>`).join('')}
         </tbody>

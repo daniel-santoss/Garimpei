@@ -61,7 +61,8 @@ function linha(p) {
   // Alterna entre Disponível(1) e Inativo(3). Bloqueado se Vendido.
   const proximo = p.status === 1 ? 3 : 1;
   const tituloToggle = vendido ? 'Produto vendido' : (p.status === 1 ? 'Tornar inativo' : 'Tornar disponível');
-  const iconeToggle = p.status === 1 ? '🚫' : '✅';
+  const iconeToggle = p.status === 1 ? Ui.icones.desativar : Ui.icones.ativar;
+  const classeToggle = p.status === 1 ? 'btn-icon--inativar' : 'btn-icon--ativar';
   return `
     <tr>
       <td>${Ui.escape(p.nome)}</td>
@@ -72,9 +73,9 @@ function linha(p) {
       <td>${Ui.escape(p.estadoTexto)}</td>
       <td>${Ui.badge(p.statusTexto)}</td>
       <td class="acoes">
-        <button class="btn-icon" title="${tituloToggle}" data-toggle="${p.id}" data-status="${proximo}" ${vendido ? 'disabled' : ''}>${iconeToggle}</button>
-        <a class="btn-icon" title="Editar" href="/pages/produto-form.html?id=${p.id}">✏️</a>
-        <button class="btn-icon" title="Excluir" data-excluir="${p.id}" data-nome="${Ui.escape(p.nome)}">🗑️</button>
+        <button class="btn-icon ${classeToggle}" title="${tituloToggle}" data-toggle="${p.id}" data-status="${proximo}" ${vendido ? 'disabled' : ''}>${iconeToggle}</button>
+        <a class="btn-icon btn-icon--editar" title="Editar" href="/pages/produto-form.html?id=${p.id}">${Ui.icones.editar}</a>
+        <button class="btn-icon btn-icon--excluir" title="Excluir" data-excluir="${p.id}" data-nome="${Ui.escape(p.nome)}">${Ui.icones.excluir}</button>
       </td>
     </tr>`;
 }
@@ -124,7 +125,7 @@ async function abrirCategorias() {
         ${cats.map(c => `
           <li>
             <span>${Ui.escape(c.nome)} <span class="muted">· ${c.qtdProdutos} produto(s)</span></span>
-            <button class="btn-icon" title="Excluir" data-del="${c.id}" data-nome="${Ui.escape(c.nome)}">🗑️</button>
+            <button class="btn-icon btn-icon--excluir" title="Excluir" data-del="${c.id}" data-nome="${Ui.escape(c.nome)}">${Ui.icones.excluir}</button>
           </li>`).join('')}
       </ul>`;
       listaEl.querySelectorAll('[data-del]').forEach(b =>

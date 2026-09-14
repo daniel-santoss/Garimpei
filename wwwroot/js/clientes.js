@@ -30,8 +30,8 @@ function render(clientes) {
               <td>${Ui.escape(c.telefone || '—')}</td>
               <td>${Ui.escape(c.email || '—')}</td>
               <td class="acoes">
-                <a class="btn-icon" title="Editar" href="/pages/cliente-form.html?id=${c.id}">✏️</a>
-                <button class="btn-icon" title="Excluir" data-excluir="${c.id}" data-nome="${Ui.escape(c.nome)}">🗑️</button>
+                <a class="btn-icon btn-icon--editar" title="Editar" href="/pages/cliente-form.html?id=${c.id}">${Ui.icones.editar}</a>
+                <button class="btn-icon btn-icon--excluir" title="Excluir" data-excluir="${c.id}" data-nome="${Ui.escape(c.nome)}">${Ui.icones.excluir}</button>
               </td>
             </tr>`).join('')}
         </tbody>

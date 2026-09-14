@@ -58,7 +58,7 @@ function renderCarrinho() {
           <span>${Ui.escape(i.nome)}</span>
           <span style="display:flex; align-items:center; gap:12px;">
             <strong>${Ui.moeda(i.preco)}</strong>
-            <button class="btn-icon" title="Remover" data-rem="${idx}">🗑️</button>
+            <button class="btn-icon btn-icon--excluir" title="Remover" data-rem="${idx}">${Ui.icones.excluir}</button>
           </span>
         </li>`).join('')}
     </ul>`;
