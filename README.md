@@ -58,7 +58,7 @@ Rodar a aplicação (a migration `InitialCreate` já existe; ela é aplicada e o
 dotnet run
 ```
 
-Acessar no navegador: **http://localhost:0000** (a porta exata aparece no console ao iniciar).
+Acessar no navegador: **http://localhost:5000** (a porta exata aparece no console ao iniciar).
 
 ### Alternativa: criar o banco por script SQL
 
